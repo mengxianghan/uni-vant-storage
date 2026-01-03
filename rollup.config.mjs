@@ -1,4 +1,3 @@
-import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
@@ -10,14 +9,6 @@ export default [
   {
     input: 'src/index.ts',
     output: [
-      {
-        file: 'dist/index.global.js',
-        name: 'myLib',
-        format: 'iife',
-        plugins: [
-          terser(),
-        ],
-      },
       {
         file: 'dist/index.cjs',
         format: 'cjs',
@@ -32,12 +23,7 @@ export default [
       typescript(),
       resolve(),
       commonjs(),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: ['node_modules/**'],
-        extensions: ['.ts'],
-        presets: ['@babel/preset-env'],
-      }),
+      terser(),
     ],
   },
   {
@@ -45,7 +31,7 @@ export default [
     output: [
       {
         file: 'dist/index.d.ts',
-        format: 'cjs',
+        format: 'esm',
       },
     ],
     plugins: [

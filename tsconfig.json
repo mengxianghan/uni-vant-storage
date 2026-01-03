@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ESNext",
     "lib": ["ESNext", "DOM"],
     "rootDir": "src",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
+    "types": [
+      "@dcloudio/types",
+      "@uni-helper/uni-app-types"
+    ],
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -16,8 +20,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/*.ts",
-    "src/**/*.ts"
+    "src"
   ],
   "exclude": [
     "node_modules",

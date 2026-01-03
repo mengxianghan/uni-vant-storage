@@ -1,27 +1,24 @@
 {
-  "name": "npm-lib-template",
+  "name": "uni-vant-storage",
   "type": "module",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "uniapp storage 缓存",
   "author": {
-    "name": "author",
-    "email": "xxxx@qq.com"
+    "name": "mengxianghan",
+    "email": "mengxianghan@qq.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/mengxianghan/npm-lib-template#readme",
+  "homepage": "https://github.com/mengxianghan/uni-vant-storage#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mengxianghan/npm-lib-template.git"
+    "url": "https://github.com/mengxianghan/uni-vant-storage.git"
   },
   "bugs": {
-    "url": "https://github.com/mengxianghan/npm-lib-template/issues"
+    "url": "https://github.com/mengxianghan/uni-vant-storage/issues"
   },
   "keywords": [
-    "npm",
-    "rollup",
-    "vite",
-    "lib",
-    "template"
+    "uniapp",
+    "storage"
   ],
   "exports": {
     ".": {
@@ -34,7 +31,6 @@
   },
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "browser": "dist/index.global.js",
   "types": "dist/index.d.ts",
   "files": [
     "README.md",
@@ -49,6 +45,7 @@
   "scripts": {
     "dev": "vite",
     "build": "rollup -c",
+    "publish": "pnpm build && npm publish",
     "prepare": "husky"
   },
   "publishConfig": {
@@ -60,6 +57,7 @@
     "@babel/preset-env": "^7.28.5",
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
+    "@dcloudio/types": "^3.4.14",
     "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-commonjs": "^28.0.9",
     "@rollup/plugin-node-resolve": "^16.0.3",
@@ -67,6 +65,8 @@
     "@rollup/plugin-typescript": "^12.3.0",
     "@swc/core": "^1.14.0",
     "@types/node": "^24.10.0",
+    "@uni-helper/uni-app-types": "1.0.0-alpha.6",
+    "@uni-helper/uni-types": "1.0.0-alpha.6",
     "eslint": "^9.38.0",
     "eslint-plugin-format": "^1.0.2",
     "husky": "^9.1.7",
@@ -84,8 +84,7 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "eslint",
-      "tsc -p tsconfig.json"
+      "eslint"
     ]
   }
 }

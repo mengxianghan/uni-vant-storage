@@ -1,1 +1,2 @@
-export default {}
+export { createStorage } from './storage'
+export * from './types'
